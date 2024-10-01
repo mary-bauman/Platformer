@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfkyjfrlcblje"]
+
+[ext_resource type="Texture2D" uid="uid://i8hv2alooy0r" path="res://icon.svg" id="1_144la"]
+[ext_resource type="Texture2D" uid="uid://dcmkobtk4ck38" path="res://Assets/hat.png" id="2_qrcax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k4k0"]
+size = Vector2(124, 122)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="PlayerBody" type="Sprite2D" parent="."]
+position = Vector2(69, 70)
+scale = Vector2(2, 2)
+texture = ExtResource("1_144la")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(68, 70)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_8k4k0")
+
+[node name="PlayerHat" type="Sprite2D" parent="."]
+position = Vector2(79, -19)
+scale = Vector2(0.772222, 0.797222)
+texture = ExtResource("2_qrcax")

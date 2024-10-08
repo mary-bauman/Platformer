@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=3 uid="uid://upalv3ms5isx"]
+
+[ext_resource type="PackedScene" uid="uid://cupi7qpibwqb1" path="res://Scenes/Virtual/actor.tscn" id="1_sx1hi"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="2_us532"]
+[ext_resource type="Texture2D" uid="uid://cbc0u4raftue6" path="res://Assets/Player/p1_stand.png" id="3_2jcl7"]
+[ext_resource type="Texture2D" uid="uid://dug8xgnhnogbd" path="res://Assets/Player/p1_hurt.png" id="4_lfl82"]
+[ext_resource type="Texture2D" uid="uid://crvjvnh7kvwek" path="res://Assets/Player/p1_jump.png" id="5_8w13e"]
+[ext_resource type="Texture2D" uid="uid://bsaxjqyg8la07" path="res://Assets/Player/p1_walk/p1_walk01.png" id="6_1ejum"]
+[ext_resource type="Texture2D" uid="uid://b2dk0thfml85w" path="res://Assets/Player/p1_walk/p1_walk02.png" id="7_bel2s"]
+[ext_resource type="Texture2D" uid="uid://dj0457f7f6a2m" path="res://Assets/Player/p1_walk/p1_walk03.png" id="8_i1tjs"]
+[ext_resource type="Texture2D" uid="uid://ck0myu6i6k6tq" path="res://Assets/Player/p1_walk/p1_walk04.png" id="9_d0ik1"]
+[ext_resource type="Texture2D" uid="uid://d2y7j5vk11wgg" path="res://Assets/Player/p1_walk/p1_walk05.png" id="10_gh4a1"]
+[ext_resource type="Texture2D" uid="uid://dvrsrkyuu4to3" path="res://Assets/Player/p1_walk/p1_walk06.png" id="11_ndrs6"]
+[ext_resource type="Texture2D" uid="uid://c4uftb3phpsfy" path="res://Assets/Player/p1_walk/p1_walk07.png" id="12_bd43b"]
+[ext_resource type="Texture2D" uid="uid://b210b2hdr0bjm" path="res://Assets/Player/p1_walk/p1_walk10.png" id="13_w2c2s"]
+[ext_resource type="Texture2D" uid="uid://cgcxsn1pwxfiy" path="res://Assets/Player/p1_walk/p1_walk11.png" id="14_ful4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbkd8"]
+size = Vector2(38, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkb7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2jcl7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lfl82")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lfl82")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8w13e")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1ejum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bel2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i1tjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d0ik1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gh4a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ndrs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bd43b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_w2c2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ful4k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvbrh"]
+size = Vector2(36, 22)
+
+[sub_resource type="Animation" id="Animation_xj5sw"]
+resource_name = "Die"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a07yp"]
+_data = {
+"Die": SubResource("Animation_xj5sw")
+}
+
+[node name="GreenBun" groups=["player"] instance=ExtResource("1_sx1hi")]
+collision_layer = 10
+collision_mask = 15
+script = ExtResource("2_us532")
+coyote_time_frames = 6
+jump_time_frames = 6
+friction = 0.428
+acceleration = 0.715
+jump_height = 175
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_jbkd8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_dkb7f")
+animation = &"walk"
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+limit_smoothed = true
+drag_horizontal_enabled = true
+
+[node name="Timers" type="Node" parent="." index="3"]
+
+[node name="CoyoteTimer" type="Timer" parent="Timers" index="0"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="Timers" index="1"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="JumpHoldTimer" type="Timer" parent="Timers" index="2"]
+unique_name_in_owner = true
+
+[node name="Hitbox" parent="." index="4"]
+collision_layer = 10
+collision_mask = 6
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 45)
+shape = SubResource("RectangleShape2D_xvbrh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_a07yp")
+}
+
+[connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

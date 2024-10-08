@@ -1,5 +1,5 @@
 extends Actor
-class_name Player
+class_name Player2
 
 @export var coyote_time_frames = 6;
 @export var jump_time_frames = 6;

@@ -1,9 +1,9 @@
 extends Node2D
-class_name BaseLevel
+class_name MaryLevel
 
 @onready var boundry_rect : Rect2i
 @onready var player_scene = preload("res://Scenes/Player/player.tscn")
-
+ 
 var levelscore = 0
 var time_taken = 0
 var starting_pos : Vector2

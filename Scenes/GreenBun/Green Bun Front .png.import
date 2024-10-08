@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4uftb3phpsfy"
-path="res://.godot/imported/p1_walk07.png-ba80ffef40f84442121c516e8ab1ea1b.ctex"
+uid="uid://u2sxw5p4g4tt"
+path="res://.godot/imported/Green Bun Front .png-1f093a2e9f6bd3d3906d65c56b2fe425.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/p1_walk/p1_walk07.png"
-dest_files=["res://.godot/imported/p1_walk07.png-ba80ffef40f84442121c516e8ab1ea1b.ctex"]
+source_file="res://Scenes/GreenBun/Green Bun Front .png"
+dest_files=["res://.godot/imported/Green Bun Front .png-1f093a2e9f6bd3d3906d65c56b2fe425.ctex"]
 
 [params]
 

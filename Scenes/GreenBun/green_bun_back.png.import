@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crvjvnh7kvwek"
-path="res://.godot/imported/p1_jump.png-ee55cd964296a5e5be6a3ceb0bc52fe7.ctex"
+uid="uid://5vw2dc5pydpk"
+path="res://.godot/imported/green_bun_back.png-9025f102ee61fa2b915b8b6d8ccdf85d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/p1_jump.png"
-dest_files=["res://.godot/imported/p1_jump.png-ee55cd964296a5e5be6a3ceb0bc52fe7.ctex"]
+source_file="res://Scenes/GreenBun/green_bun_back.png"
+dest_files=["res://.godot/imported/green_bun_back.png-9025f102ee61fa2b915b8b6d8ccdf85d.ctex"]
 
 [params]
 

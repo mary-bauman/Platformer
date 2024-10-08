@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmkobtk4ck38"
-path="res://.godot/imported/hat.png-ad86499741fdcae427bcd9f06cbe4a01.ctex"
+uid="uid://bj0sq1bl1csbu"
+path="res://.godot/imported/green_bun.png-a9eeb8930f31744ad45814e1d7cb948e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hat.png"
-dest_files=["res://.godot/imported/hat.png-ad86499741fdcae427bcd9f06cbe4a01.ctex"]
+source_file="res://Assets/Player/green_bun.png"
+dest_files=["res://.godot/imported/green_bun.png-a9eeb8930f31744ad45814e1d7cb948e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2y7j5vk11wgg"
-path="res://.godot/imported/p1_walk05.png-3d30d9d934d726b8e884c14a8e19905e.ctex"
+uid="uid://bg25xjlbbo24r"
+path="res://.godot/imported/Green Bun Left.png-15ea88f561ed20c594cdb90c47113f85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/p1_walk/p1_walk05.png"
-dest_files=["res://.godot/imported/p1_walk05.png-3d30d9d934d726b8e884c14a8e19905e.ctex"]
+source_file="res://Scenes/GreenBun/Green Bun Left.png"
+dest_files=["res://.godot/imported/Green Bun Left.png-15ea88f561ed20c594cdb90c47113f85.ctex"]
 
 [params]
 

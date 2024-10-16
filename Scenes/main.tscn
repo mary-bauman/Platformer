@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dflss4gn1r0gx"]
+[gd_scene load_steps=3 format=3 uid="uid://dflss4gn1r0gx"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_bo77m"]
+[ext_resource type="AudioStream" uid="uid://cr1b8aialppkr" path="res://Assets/Sound/Olive3_main_theme.mp3" id="2_0ph82"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bo77m")
@@ -14,3 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0ph82")
+autoplay = true
+parameters/looping = true

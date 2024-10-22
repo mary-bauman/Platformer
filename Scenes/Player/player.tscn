@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cd10vmk4sg54n" path="res://Assets/Player/green_bun_back.png" id="6_8r2sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbkd8"]
-size = Vector2(38, 73)
+size = Vector2(16, 19)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkb7f"]
 animations = [{
@@ -66,7 +66,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvbrh"]
-size = Vector2(36, 22)
+size = Vector2(16, 14)
 
 [sub_resource type="Animation" id="Animation_xj5sw"]
 resource_name = "Die"
@@ -87,15 +87,16 @@ acceleration = 0.715
 jump_height = 175
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 9.5)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_jbkd8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_dkb7f")
 animation = &"fall"
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
+zoom = Vector2(2, 2)
 limit_smoothed = true
 drag_horizontal_enabled = true
 
@@ -117,7 +118,7 @@ collision_layer = 10
 collision_mask = 6
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2(0, 45)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_xvbrh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]

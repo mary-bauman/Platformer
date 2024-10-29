@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 SceneTrainsition="*res://Scenes/Autoloads/scene_trainsition.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Platformer Template"

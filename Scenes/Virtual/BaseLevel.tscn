@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://boic0ihw3y8wu" path="res://Scenes/Interactables/exit.tscn" id="3_24241"]
 [ext_resource type="Texture2D" uid="uid://c551dw8rn2jkj" path="res://Assets/Tiles/Dungeon Tile Set.png" id="3_aakjk"]
 [ext_resource type="PackedScene" uid="uid://de5utrueqtaqj" path="res://Scenes/Interactables/checkpoint.tscn" id="5_t4l8f"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/crawler_enemy.tscn" id="6_3c4nd"]
+[ext_resource type="PackedScene" uid="uid://b6n2e6kkf0hqu" path="res://Scenes/Enemies/crawler_enemy.tscn" id="6_3c4nd"]
 [ext_resource type="PackedScene" uid="uid://c1bq0xi4a0k6s" path="res://Scenes/Interactables/collectable.tscn" id="6_nawf6"]
 [ext_resource type="PackedScene" uid="uid://bsa8sgay28e88" path="res://Scenes/Interactables/death_zone.tscn" id="7_0fme4"]
 [ext_resource type="PackedScene" uid="uid://dgq8aqvhj6bte" path="res://Scenes/Interactables/crate.tscn" id="8_vveao"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/flyer_enemy.tscn" id="9_ixmm2"]
+[ext_resource type="PackedScene" uid="uid://bhgdgjy2jxwjs" path="res://Scenes/Enemies/flyer_enemy.tscn" id="9_ixmm2"]
 [ext_resource type="PackedScene" uid="uid://ubm3g25m2mvs" path="res://Scenes/UI/level_ui.tscn" id="9_ksn3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50mku"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vsxauni78yw6"]
+[gd_scene load_steps=19 format=3 uid="uid://vsxauni78yw6"]
 
 [ext_resource type="Script" path="res://Scenes/Virtual/BaseLevel.gd" id="1_gi0ax"]
 [ext_resource type="PackedScene" uid="uid://dk6a56e3n3mbc" path="res://Scenes/Player/player.tscn" id="2_2wr2r"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dgq8aqvhj6bte" path="res://Scenes/Interactables/crate.tscn" id="8_vveao"]
 [ext_resource type="PackedScene" uid="uid://bhgdgjy2jxwjs" path="res://Scenes/Enemies/flyer_enemy.tscn" id="9_ixmm2"]
 [ext_resource type="PackedScene" uid="uid://ubm3g25m2mvs" path="res://Scenes/UI/level_ui.tscn" id="9_ksn3r"]
+[ext_resource type="Texture2D" uid="uid://p158mwy3fdmu" path="res://Assets/background.png" id="13_7n354"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50mku"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6paow"]
 texture = ExtResource("3_aakjk")
 1:1/0 = 0
 1:1/0/terrain_set = 0
@@ -354,7 +355,7 @@ texture = ExtResource("3_aakjk")
 9:5/0 = 0
 9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_muqlf"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_q4fpc"]
 resource_name = "Tiles"
 scenes/1/scene = ExtResource("3_24241")
 scenes/2/scene = ExtResource("2_2wr2r")
@@ -363,7 +364,7 @@ scenes/4/scene = ExtResource("6_nawf6")
 scenes/5/scene = ExtResource("7_0fme4")
 scenes/6/scene = ExtResource("8_vveao")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6pwhb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y786h"]
 texture = ExtResource("2_hswp3")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
@@ -745,7 +746,7 @@ texture_region_size = Vector2i(70, 70)
 11:3/0/terrains_peering_bit/top_left_corner = 0
 11:3/0/terrains_peering_bit/top_side = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3eqbe"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_n4arn"]
 resource_name = "Enemies"
 scenes/1/scene = ExtResource("6_3c4nd")
 scenes/2/scene = ExtResource("9_ixmm2")
@@ -756,13 +757,30 @@ physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/1 = SubResource("TileSetScenesCollectionSource_muqlf")
-sources/2 = SubResource("TileSetScenesCollectionSource_3eqbe")
-sources/10 = SubResource("TileSetAtlasSource_6pwhb")
-sources/0 = SubResource("TileSetAtlasSource_50mku")
+sources/1 = SubResource("TileSetScenesCollectionSource_q4fpc")
+sources/2 = SubResource("TileSetScenesCollectionSource_n4arn")
+sources/10 = SubResource("TileSetAtlasSource_y786h")
+sources/0 = SubResource("TileSetAtlasSource_6paow")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_gi0ax")
+
+[node name="BackgroundBackground" type="ColorRect" parent="."]
+offset_left = -2708.0
+offset_top = -3519.0
+offset_right = 10171.0
+offset_bottom = 3937.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1152, 0)
+repeat_times = 11
+
+[node name="Background" type="Sprite2D" parent="Background"]
+scale = Vector2(0.72, 0.676042)
+texture = ExtResource("13_7n354")
+centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2ptkc")

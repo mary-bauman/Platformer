@@ -72,4 +72,3 @@ To add your levels to the level select, as well as order your levels, you need t
 ### How To Make It Your Own
 
 You can simply edit the assets as you need to! Change the tile set of the base level, or change the character art of the player!
-

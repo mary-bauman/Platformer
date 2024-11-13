@@ -1,0 +1,14 @@
+[remap]
+
+importer="clyde.dialogue"
+type="ClydeDialogueFile"
+uid="uid://de3ncbhs0ct4o"
+path="res://.godot/imported/rosabelle.clyde-49d9722c77144b9cd6f297769026306c.res"
+
+[deps]
+
+source_file="res://dialogues/rosabelle.clyde"
+dest_files=["res://.godot/imported/rosabelle.clyde-49d9722c77144b9cd6f297769026306c.res"]
+
+[params]
+

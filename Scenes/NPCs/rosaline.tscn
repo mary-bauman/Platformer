@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=3 uid="uid://bshwdtohq6xbm"]
+
+[ext_resource type="PackedScene" uid="uid://cupi7qpibwqb1" path="res://Scenes/Virtual/actor.tscn" id="1_aa8qt"]
+[ext_resource type="Texture2D" uid="uid://df5tom1721tki" path="res://Assets/NPCs/Rosaline Front.png" id="2_rg58a"]
+[ext_resource type="Script" path="res://Scenes/NPCs/rosaline.gd" id="2_sbedy"]
+[ext_resource type="Texture2D" uid="uid://bt06004siun15" path="res://Assets/NPCs/Rosaline Left Low.png" id="3_uk0mt"]
+[ext_resource type="Texture2D" uid="uid://bqr541otf2k8n" path="res://Assets/NPCs/Rosaline Left High.png" id="4_1qgx5"]
+[ext_resource type="Texture2D" uid="uid://b7hbyls5lrymt" path="res://Assets/NPCs/Rosaline Right Low.png" id="5_te5tc"]
+[ext_resource type="Texture2D" uid="uid://c40houre5na87" path="res://Assets/NPCs/Rosaline Right High.png" id="6_dpxy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbkd8"]
+size = Vector2(16, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkb7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rg58a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uk0mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1qgx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uk0mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rg58a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_te5tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dpxy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_te5tc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rg58a")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rg58a")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rg58a")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 17.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rg58a")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvbrh"]
+size = Vector2(57, 45)
+
+[sub_resource type="Animation" id="Animation_xj5sw"]
+resource_name = "Die"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a07yp"]
+_data = {
+"Die": SubResource("Animation_xj5sw")
+}
+
+[node name="Rosaline" groups=["player"] instance=ExtResource("1_aa8qt")]
+collision_layer = 10
+collision_mask = 15
+script = ExtResource("2_sbedy")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_jbkd8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_dkb7f")
+frame_progress = 0.129101
+
+[node name="Timers" type="Node" parent="." index="2"]
+
+[node name="CoyoteTimer" type="Timer" parent="Timers" index="0"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="Timers" index="1"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="JumpHoldTimer" type="Timer" parent="Timers" index="2"]
+unique_name_in_owner = true
+
+[node name="Hitbox" parent="." index="3"]
+collision_layer = 10
+collision_mask = 6
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_xvbrh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_a07yp")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="." index="5"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="timeout" from="Timers/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="MarginContainer" method="_on_hitbox_body_entered"]
